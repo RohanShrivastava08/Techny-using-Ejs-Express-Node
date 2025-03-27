@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Font Awesome CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <title>⚙️ Techny </title> <!-- Unicode icon for better browser tab compatibility -->
+    
+        <!-- Favicon for Browser Tab Icon -->
+        <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/svgs/solid/microchip.svg" type="image/svg+xml">
+    
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+    
+        <!-- GSAP for animations -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+        <style>
+            @keyframes glitch {
+                0% { text-shadow: 2px 2px red, -2px -2px cyan; }
+                50% { text-shadow: -2px -2px red, 2px 2px cyan; }
+                100% { text-shadow: 2px -2px red, -2px 2px cyan; }
+            }
+            .glitch {
+                animation: glitch 0.5s infinite alternate;
+            }
+        </style>
+    </head>
+    <body class="bg-gray-900 text-white font-sans">
+    
+        <!-- Header -->
+        <header class="text-center py-10">
+            <h1 class="text-6xl font-extrabold text-teal-400 glitch">
+                <i class="fas fa-microchip"></i> Techny
+            </h1>
+            <p class="text-lg text-gray-300 mt-2">The Future of Technology</p>
+        </header>
+
+    <!-- Tech Image Slider -->
+    <div class="w-4/5 mx-auto overflow-hidden relative rounded-lg shadow-lg mt-10">
+        <div class="flex transition-transform duration-700 ease-in-out" id="slider">
+            <div class="min-w-full"><img src="/assets/images/tech1.jpg" class="w-full h-64 object-cover"><p class="text-center mt-2">AI Revolution</p></div>
+            <div class="min-w-full"><img src="/assets/images/tech2.jpg" class="w-full h-64 object-cover"><p class="text-center mt-2">MERN Stack Development</p></div>
+            <div class="min-w-full"><img src="/assets/images/tech3.jpg" class="w-full h-64 object-cover"><p class="text-center mt-2">The Future of Web</p></div>
+            <div class="min-w-full"><img src="/assets/images/tech4.jpg" class="w-full h-64 object-cover"><p class="text-center mt-2">PC Hardware Evolution</p></div>
+        </div>
+    </div>
+
+    <!-- Latest Tech Insights -->
+    <section class="mt-12 w-4/5 mx-auto text-center">
+        <h2 class="text-4xl font-bold text-teal-400">Latest Tech Insights</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+            <% const blogData = [
+                { title: "Mastering MERN Stack", image: "mern.jpg", desc: "Build scalable full-stack applications using MongoDB, Express, React, and Node.js." },
+                { title: "AI & The Future", image: "ai.jpg", desc: "Artificial intelligence is transforming industries with automation and deep learning." },
+                { title: "ChatGPT & NLP", image: "chatgpt.jpg", desc: "Understanding natural language processing and AI-driven chatbots."},
+                { title: "PC Buildup", image: "pcbuild.jpg", desc: "Choose the right components for your PC build." },
+                { title: "Cyber Security", image: "cybersecurity.jpg", desc: "Protecting your digital world from cyber threats." },
+                { title: "Front End Development", image: "frontend.jpg", desc: "Mastering modern web development with HTML, CSS, and JavaScript." }
+            ]; %>
+
+            <% blogData.forEach(blog => { %>
+                <div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:scale-105 transition">
+                    <img src="/assets/images/<%= blog.image %>" class="w-full h-40 object-cover rounded">
+                    <h3 class="text-xl font-bold mt-3"><%= blog.title %></h3>
+                    <p class="text-gray-400 mt-2"><%= blog.desc %></p>
+                </div>
+            <% }); %>
+        </div>
+    </section>
+
+    <!-- People Reviews -->
+    <section class="mt-16 w-4/5 mx-auto text-center">
+        <h2 class="text-4xl font-bold text-teal-400">What People Say About Us</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+            <% const reviews = [
+                { name: "Deepak Singh", image: "user1.jpg", review: "Techny has transformed how I view technology. Absolutely amazing!" },
+                { name: "Akash Sharma", image: "user2.jpg", review: "Best tech insights I have ever seen. Highly recommended!" },
+                { name: "Sakshi", image: "user3.jpg", review: "A futuristic experience! The UI is just mind-blowing!" }
+            ]; %>
+
+            <% reviews.forEach(person => { %>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition">
+                    <img src="/assets/images/<%= person.image %>" class="w-20 h-20 rounded-full mx-auto">
+                    <h3 class="text-xl font-bold mt-3"><%= person.name %></h3>
+                    <p class="text-gray-400 mt-2"><%= person.review %></p>
+                    <p class="text-yellow-400 mt-2">★★★★★</p>
+                </div>
+            <% }); %>
+        </div>
+    </section>
+
+    <!-- 9 Must-Have Tech Tools -->
+    <section class="mt-16 w-4/5 mx-auto text-center">
+        <h2 class="text-4xl font-bold text-teal-400">9 Must-Have Tech Tools</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+            <% const tools = [
+                "VS Code", "Postman", "Git & GitHub", "Docker", "Figma",
+                "Chrome DevTools", "AWS", "Notion", "Linux Terminal"
+            ]; %>
+
+            <% tools.forEach(tool => { %>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition">
+                    <h3 class="text-xl font-bold"><%= tool %></h3>
+                    <p class="text-gray-400 mt-2">Essential for modern development.</p>
+                </div>
+            <% }); %>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer class="bg-gray-950 text-gray-300 mt-16 py-10 px-5">
+    <div class="w-4/5 mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
+        
+        <!-- Techny Branding & Description -->
+        <div>
+            <h2 class="text-3xl font-bold text-teal-400">Techny</h2>
+            <p class="mt-3 text-gray-400">Stay ahead in the world of technology with the latest insights, tools, and trends.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+            <h3 class="text-xl font-bold text-teal-400">Quick Links</h3>
+            <ul class="mt-3 space-y-2">
+                <li><a href="#" class="hover:text-teal-300 transition">Home</a></li>
+                <li><a href="#" class="hover:text-teal-300 transition">Latest Insights</a></li>
+                <li><a href="#" class="hover:text-teal-300 transition">Tech Tools</a></li>
+                <li><a href="#" class="hover:text-teal-300 transition">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Social Media & Contact -->
+        <div>
+            <h3 class="text-xl font-bold text-teal-400">Connect with Us</h3>
+            <div class="flex justify-center md:justify-start mt-3 space-x-4">
+                <a href="#" class="text-gray-400 hover:text-blue-500 transition"><i class="fab fa-twitter text-2xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-blue-700 transition"><i class="fab fa-linkedin text-2xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-pink-500 transition"><i class="fab fa-instagram text-2xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-youtube text-2xl"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center mt-8 border-t border-gray-800 pt-4">
+        <p class="text-gray-500">&copy; <%= new Date().getFullYear() %> Techny. All Rights Reserved.</p>
+    </div>
+</footer>
+   
+
+    <!-- GSAP Animations -->
+    <script>
+        gsap.from("h2", { opacity: 0, y: 20, duration: 1, stagger: 0.3 });
+        gsap.to("#slider", { opacity: 1, duration: 1 });
+    </script>
+
+</body>
+</html>
