@@ -1,4 +1,4 @@
-🚀 Techny - Interactive Web Experience
+# 🚀 Techny - Interactive Web Experience
 
 ![Screenshot (1231)](https://github.com/user-attachments/assets/c918db79-cb9f-473b-9450-23d7f3623e3d)
 
